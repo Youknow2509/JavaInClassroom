@@ -8,6 +8,13 @@ public class Use {
 		}
 		System.out.println();
 	}
+	public static <T> void showArray(T[] arr, int n) {
+		System.out.print("Array: ");
+		for (int i = 0; i < n; i++) {
+			System.out.print(arr[i] + " ");
+		}
+		System.out.println();
+	}
 	public static <T> void swap(T[] arr, int a, int b) {
 		int n = arr.length;
 		if (a < 0 && a >= n && b < 0 && b > n) {
