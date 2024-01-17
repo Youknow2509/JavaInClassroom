@@ -1,10 +1,11 @@
 package week2.sodoku;
 
+import week2.sodoku.assets.SudokuGenerator;
 /*
  * Main game Sodoku
  */
 
-public class Sodoku {
+public class Sodoku extends SudokuGenerator{
 
 	private static void showArray(int[][] arr) {
 		System.out.println("   0 1 2   3 4 5   6 7 8");
@@ -24,21 +25,27 @@ public class Sodoku {
 
 	}
 
+	private static void cleanScreen() {
+		// Kiem tra he dieu hanh cua nguoi xu dung
+		String os = System.getProperty("os.name").toLowerCase();
+
+        if (os.contains("win")) {
+            System.out.print("\f");
+        } else if (os.contains("nix") || os.contains("nux") || os.contains("mac")) {
+            System.out.print("\033[H\033[2J");
+        } 
+	}
+
 	public static void main(String[] args) {
-			int[][] arr = {
-						{2, 1, 9, 7, 6, 4, 5, 3, 8},
-						{7, 3, 4, 5, 9, 8, 1, 6, 2},
-						{6, 8, 5, 1, 3, 2, 4, 7, 9},
-						{8, 5, 1, 3, 4, 9, 7, 2, 6},
-						{4, 7, 3, 2, 5, 6, 8, 9, 1},
-						{5, 6, 8, 4, 2, 7, 9, 1, 3},
-						{5, 6, 8, 4, 2, 7, 9, 1, 3},
-						{3, 4, 2, 9, 1, 5, 6, 8, 7},	
-						{1, 9, 7, 5, 8, 3, 2, 5, 4}
-			};
+			
 
-			showArray(arr);
+			int[][] arr = generateSudoku();
+			
 
+			cleanScreen();
+			
+			showArray(arr); 
+			
 	}
 
 }
