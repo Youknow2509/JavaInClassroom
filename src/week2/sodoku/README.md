@@ -11,7 +11,9 @@
 
 ## Cách khởi tạo trò chơi ngẫu nhiên:
  
-    Loadding ........
+- Đầu tiên khởi tạo 3 nhóm trên đường chéo bằng phương thức random.
+- Xử dụng tư tưởng quay lui để điền các giá trị hợp lệ vào bảng => Đc một bảng giá trị chuẩn.
+- Xoá đi một số ô để khiến người chơi dùng qui luật của game để tìm ra.
 
 ## CMD run in my mac in terminal:
 
