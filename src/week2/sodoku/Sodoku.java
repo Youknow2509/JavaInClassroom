@@ -45,8 +45,7 @@ public class Sodoku extends SudokuGenerator {
 		return false;
 	}
 
-	public static void main(String[] args) {
-
+	private static void run() {
 			int otrong;
 			boolean game = true; 
 			int c = 3; 
@@ -93,6 +92,12 @@ public class Sodoku extends SudokuGenerator {
 			}
 			System.out.println("Win!");	
 			input.close(); // Dong scanner tranh tinh trang do di vung nho
+	}
+
+	public static void main(String[] args) {
+
+		run();
+
 	}
 
 }

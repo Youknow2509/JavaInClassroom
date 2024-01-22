@@ -92,7 +92,7 @@ public class SudokuGenerator extends check {
         return false;
     } 
 
-    private static void removeDigits(int[][] arr, int count) {
+    public static void removeDigits(int[][] arr, int count) {
         while (count != 0) {
             int i = randomGenerator(8);
             int j = randomGenerator(8);
@@ -101,5 +101,15 @@ public class SudokuGenerator extends check {
                 arr[i][j] = 0;
             }
         }
+    }
+
+    public static int[][] coppyArr2d(int[][] arr) {
+        int[][] temp = new int[size][size];
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size ; j++) {
+                temp[i][j] = arr[i][j];
+            }
+        }
+        return temp;
     }
 }
