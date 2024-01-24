@@ -1,6 +1,5 @@
 package week2.sodoku.assets;
 
-import java.util.Arrays;
 import java.util.Random;
 
 /*
