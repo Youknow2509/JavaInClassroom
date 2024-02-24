@@ -12,6 +12,11 @@ public class Circle implements Shape{
     public Circle() {
         super();
     }
+    public Circle(Point2D p, double R){
+        this.Cx = p.getX();
+        this.Cy = p.getY();
+        this.R = R;
+    }
     // Getter and Setter
     public double getCx() {
         return Cx;
@@ -53,7 +58,7 @@ public class Circle implements Shape{
 
     @Override
     public double circ() {
-        return 0;
+        return 2 * Math.PI * R;
     }
 
     @Override
@@ -79,6 +84,10 @@ public class Circle implements Shape{
 
     @Override
     public void zoom(double ratio) {
-
+        if (ratio > 0){
+            R *= ratio;
+        } else {
+            R /= -ratio;
+        }
     }
 }
