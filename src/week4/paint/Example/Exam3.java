@@ -28,7 +28,7 @@ public class Exam3 {
 
     }
     // Ham tao n hinh ngau nhien
-    public static void RandomShape(ArrayList<Shape> shapes, int n){
+    private static void RandomShape(ArrayList<Shape> shapes, int n){
         for (int i = 0; i < n; i++) {
             int type = (int) (Math.random() * 3);
             switch (type){
@@ -61,7 +61,7 @@ public class Exam3 {
         }
     }
     // Ham in ra thong tin cua cac hinh trong list
-    public static void printInfo(ArrayList<Shape> shapes){
+    private static void printInfo(ArrayList<Shape> shapes){
         System.out.println("List of shapes: ");
         for (Shape shape : shapes) {
             System.out.println("    " + shape);
