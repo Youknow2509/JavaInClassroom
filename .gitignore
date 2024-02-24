@@ -4,4 +4,8 @@ bin
 **/.DS_Store
 **/.classpath
 **/.settings
+**/out
 **/project
+**/out
+**/.idea
+**/*.iml
