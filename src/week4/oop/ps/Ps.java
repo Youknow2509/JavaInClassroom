@@ -53,9 +53,6 @@ public class Ps {
         T /= gcd;
         M /= gcd;
     }
-
-    // Phương thức tính ước chung lớn nhất
-
     public Ps tong(Ps b) {
         Ps res = new Ps();
         res.setT(T*b.getM() + b.getT()*M);
@@ -87,6 +84,16 @@ public class Ps {
     public boolean equals(Ps b) {
         return T*b.getM() == b.getT()*M;
     }
+    public int compare(Ps a) {
+        double p1 = getPs();
+        double p2 = a.getPs();
+        if (p1 > p2) {
+            return 1;
+        } else if (p1 < p2) {
+            return -1;
+        }
+        return 0;
+    }
     public Ps getMaxElement(ArrayList<Ps> arr) {
         Ps max = arr.get(0);
         for (int i = 1; i < arr.size(); i++) {
@@ -112,4 +119,16 @@ public class Ps {
         }
         return count;
     }
+    public int phannguyen(){
+        return (int)T/M;
+    }
+    public Ps phankhongnguyen(){
+        Ps p = new Ps(T, M);
+        int t = p.phannguyen();
+        if (t >= 1) {
+            p.setT(T - t*p.getM());
+        }
+        return p;
+    }
+
 }

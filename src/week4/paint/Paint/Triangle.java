@@ -65,6 +65,14 @@ public class Triangle implements Shape{
     }
 
     @Override
+    public Point2D tam() {
+        Point2D t = new Point2D();
+        t.setX((a.getX() + b.getX() + c.getX())/3);
+        t.setY((a.getY() + b.getY() + c.getY())/3);
+        return t;
+    }
+
+    @Override
     public void move(double dx, double dy) {
         a.setX(a.getX() + dx);
         a.setY(a.getY() + dy);
@@ -76,14 +84,10 @@ public class Triangle implements Shape{
 
     @Override
     public void rotate(double alpha) {
-        double x = (a.getX() + b.getX() + c.getX()) / 3;
-        double y = (a.getY() + b.getY() + c.getY()) / 3;
-        a.setX(x + (a.getX() - x) * Math.cos(alpha) - (a.getY() - y) * Math.sin(alpha));
-        a.setY(y + (a.getX() - x) * Math.sin(alpha) + (a.getY() - y) * Math.cos(alpha));
-        b.setX(x + (b.getX() - x) * Math.cos(alpha) - (b.getY() - y) * Math.sin(alpha));
-        b.setY(y + (b.getX() - x) * Math.sin(alpha) + (b.getY() - y) * Math.cos(alpha));
-        c.setX(x + (c.getX() - x) * Math.cos(alpha) - (c.getY() - y) * Math.sin(alpha));
-        c.setY(y + (c.getX() - x) * Math.sin(alpha) + (c.getY() - y) * Math.cos(alpha));
+        Point2D t = tam();
+        a.xoay(alpha, t);
+        b.xoay(alpha, t);
+        c.xoay(alpha, t);
     }
 
     @Override
@@ -104,4 +108,5 @@ public class Triangle implements Shape{
             c.setY(c.getY() / -ratio);
         }
     }
+
 }

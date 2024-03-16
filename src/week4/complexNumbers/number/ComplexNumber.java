@@ -48,14 +48,23 @@ public class ComplexNumber {
     }
 
     public ComplexNumber multiply(ComplexNumber c){
-        return new ComplexNumber(this.real * c.real - this.imaginary * c.imaginary, this.real * c.imaginary + this.imaginary * c.real);
+        return new ComplexNumber(this.real * c.real - this.imaginary * c.imaginary,
+                this.real * c.imaginary + this.imaginary * c.real);
     }
 
     public ComplexNumber divide(ComplexNumber c){
         double denominator = c.real * c.real + c.imaginary * c.imaginary;
-        return new ComplexNumber((this.real * c.real + this.imaginary * c.imaginary) / denominator, (this.imaginary * c.real - this.real * c.imaginary) / denominator);
+        return new ComplexNumber((this.real * c.real + this.imaginary * c.imaginary) / denominator,
+                (this.imaginary * c.real - this.real * c.imaginary) / denominator);
     }
-
+    public ComplexNumber divide(double n) {
+        if (n != 0) {
+            return new ComplexNumber(
+                    real/n, imaginary/n
+            );
+        }
+        return new ComplexNumber(0, 0);
+    }
     public double abs(){
         return Math.sqrt(this.real * this.real + this.imaginary * this.imaginary);
     }
@@ -63,4 +72,5 @@ public class ComplexNumber {
     public ComplexNumber conjugate(){
         return new ComplexNumber(this.real, -this.imaginary);
     }
+
 }

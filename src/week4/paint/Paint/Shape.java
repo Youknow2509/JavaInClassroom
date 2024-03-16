@@ -6,6 +6,7 @@ public interface Shape {
     public double circ();
     public double distance();
     public double distance(Point2D p);
+    public Point2D tam();
 
     // Biến đổi
     public void move(double dx, double dy);

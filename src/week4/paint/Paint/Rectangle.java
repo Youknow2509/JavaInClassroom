@@ -74,6 +74,14 @@ public class Rectangle implements Shape{
     }
 
     @Override
+    public Point2D tam() {
+        Point2D t = new Point2D();
+        t.setX((a.getX() + c.getX())/2);
+        t.setY((a.getY() + c.getY())/2);
+        return t;
+    }
+
+    @Override
     public void move(double dx, double dy) {
         a.setX(a.getX() + dx);
         a.setY(a.getY() + dy);
@@ -87,22 +95,11 @@ public class Rectangle implements Shape{
 
     @Override
     public void rotate(double alpha) {
-        double x = a.getX();
-        double y = a.getY();
-        a.setX(x * Math.cos(alpha) - y * Math.sin(alpha));
-        a.setY(x * Math.sin(alpha) + y * Math.cos(alpha));
-        x = b.getX();
-        y = b.getY();
-        b.setX(x * Math.cos(alpha) - y * Math.sin(alpha));
-        b.setY(x * Math.sin(alpha) + y * Math.cos(alpha));
-        x = c.getX();
-        y = c.getY();
-        c.setX(x * Math.cos(alpha) - y * Math.sin(alpha));
-        c.setY(x * Math.sin(alpha) + y * Math.cos(alpha));
-        x = d.getX();
-        y = d.getY();
-        d.setX(x * Math.cos(alpha) - y * Math.sin(alpha));
-        d.setY(x * Math.sin(alpha) + y * Math.cos(alpha));
+        Point2D t = tam();
+        a.xoay(alpha, t);
+        b.xoay(alpha, t);
+        c.xoay(alpha, t);
+        d.xoay(alpha, t);
     }
 
     @Override
@@ -119,4 +116,5 @@ public class Rectangle implements Shape{
             d.setY(d.getY() / -ratio);
         }
     }
+
 }

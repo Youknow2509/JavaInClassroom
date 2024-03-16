@@ -24,5 +24,11 @@ public class Main {
         System.out.println("Element max in array list: " + temp.getMaxElement(list).toString());
         System.out.println(("Sum array list: " + temp.sumList(list).toString()));
         System.out.println("Number of elements in array list not Integer:  " + temp.countNotInteger(list));
+
+        int s = 0;
+        for (int i = 0; i < list.size(); i++) {
+            s += list.get(i).getT();
+        }
+        System.out.println("Tong tu so: " + s);
     }
 }

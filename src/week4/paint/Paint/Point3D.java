@@ -1,6 +1,6 @@
 package week4.paint.Paint;
 
-public class Point3D extends Point2D{
+public class Point3D extends Point2D {
     private double z;
 
     public Point3D(double x, double y, double z){
@@ -8,6 +8,9 @@ public class Point3D extends Point2D{
         this.z = z;
     }
 
+    public Point3D(){
+        super();
+    }
     public double getZ() {
         return z;
     }
@@ -50,5 +53,16 @@ public class Point3D extends Point2D{
         setX(getX() + dx);
         setY(getY() + dy);
         z += dz;
+    }
+
+    @Override
+    public Point2D diemDoiXungQua(Point2D p) {
+        Point3D t = new Point3D();
+        t.setX(2*p.getX() - this.getX());
+        t.setY(2*p.getY() - this.getY());
+        if (p instanceof Point3D) {
+            t.setZ(2*((Point3D)p).getZ() - this.getZ());
+        }
+        return t;
     }
 }

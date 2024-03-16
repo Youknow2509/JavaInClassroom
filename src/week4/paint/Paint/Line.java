@@ -62,6 +62,14 @@ public class Line implements Shape {
     }
 
     @Override
+    public Point2D tam() {
+        Point2D t = new Point2D();
+        t.setX((a.getX() + b.getX())/2);
+        t.setY((a.getY() + b.getY())/2);
+        return t;
+    }
+
+    @Override
     public void move(double dx, double dy) {
         a.setX(a.getX() + dx);
         a.setY(a.getY() + dy);
@@ -71,14 +79,9 @@ public class Line implements Shape {
 
     @Override
     public void rotate(double alpha) {
-        double x1 = a.getX();
-        double y1 = a.getY();
-        double x2 = b.getX();
-        double y2 = b.getY();
-        a.setX(x1 * Math.cos(alpha) - y1 * Math.sin(alpha));
-        a.setY(x1 * Math.sin(alpha) + y1 * Math.cos(alpha));
-        b.setX(x2 * Math.cos(alpha) - y2 * Math.sin(alpha));
-        b.setY(x2 * Math.sin(alpha) + y2 * Math.cos(alpha));
+        Point2D tam = tam();
+        a.xoay(alpha, tam);
+        b.xoay(alpha, tam);
     }
 
     @Override

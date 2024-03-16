@@ -9,6 +9,10 @@ public class Point2D implements Shape {
         this.y = y;
     }
 
+    public Point2D(){
+        super();
+    }
+
     public double getX() {
         return x;
     }
@@ -50,22 +54,27 @@ public class Point2D implements Shape {
 
     @Override
     public void move(double dx, double dy) {
-
+        x += dx;
+        y += dy;
     }
 
     @Override
     public void rotate(double alpha) {
-
     }
 
     @Override
     public void zoom(double ratio) {
-
     }
+
     @Override
     // Trả về khoảng cách hai điểm
     public double distance(Point2D point) {
         return Math.sqrt((x - point.x) * (x - point.x) + (y - point.y) * (y - point.y));
+    }
+
+    @Override
+    public Point2D tam() {
+        return null;
     }
 
     // Trả về điểm đối xứng qua gốc toạ độ
@@ -74,8 +83,21 @@ public class Point2D implements Shape {
     }
 
     // Tịnh tiến điểm một khoảng dx, dy
-    public void translate(double dx, double dy) {
-        x += dx;
-        y += dy;
+    // Điểm đối xứng
+    public Point2D diemDoiXungQua(Point2D p) {
+        Point2D t = new Point2D();
+        t.setX(2*p.getX() - this.getX());
+        t.setY(2*p.getY() - this.getY());
+        return t;
     }
+    // Xoay điểm góc alpha so với điểm p
+    public void xoay(double alpha, Point2D p) {
+        this.setX(p.getX()
+                + (this.getX() - p.getX()) * Math.cos(alpha)
+                - (this.getY() - p.getY()) * Math.sin(alpha));
+        this.setY(p.getY()
+                + (this.getX() - p.getX()) * Math.sin(alpha)
+                + (this.getY() - p.getY()) * Math.cos(alpha));
+    }
+
 }

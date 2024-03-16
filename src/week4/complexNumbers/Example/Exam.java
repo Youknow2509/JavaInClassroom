@@ -21,7 +21,7 @@ public class Exam {
         for (int i = 0; i < n; i++) {
             tbc = tbc.add(complexNumbers.get(i));
         }
-        tbc = tbc.divide(new ComplexNumber(n, 0));
+        tbc = tbc.divide(n);
         System.out.println("Trung binh cong cua day la: " + tbc);
 
         // Tìm số có modunlus lớn nhất

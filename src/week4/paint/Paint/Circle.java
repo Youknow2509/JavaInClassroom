@@ -71,6 +71,12 @@ public class Circle implements Shape{
     }
 
     @Override
+    public Point2D tam() {
+        Point2D t = new Point2D(Cx, Cy);
+        return t;
+    }
+
+    @Override
     // Method move
     public void move(double dx, double dy){
         Cx += dx;
@@ -79,7 +85,6 @@ public class Circle implements Shape{
 
     @Override
     public void rotate(double alpha) {
-
     }
 
     @Override

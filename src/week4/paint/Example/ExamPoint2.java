@@ -41,5 +41,23 @@ public class ExamPoint2 {
         for (Point2D p : lPoint) {
             System.out.println(p);
         }
+        // Khoang cach min toi O(0, 0) cua diem 2D
+        System.out.println("Diem 2D co khoang cach toi O(0, 0) nho nhat la: ");
+        System.out.println(diem2DGanGocToaDoNhat(lPoint));
+    }
+    public static Point2D diem2DGanGocToaDoNhat(ArrayList<Point2D> lPoint) {
+        Point2D pTemp = lPoint.get(0);
+        double s = (pTemp).distance();
+        for (int i = 1; i < lPoint.size(); i++) {
+            Point2D p =  lPoint.get(i);
+            if (p instanceof Point2D) {
+                double distanceTemp = (p).distance();
+                if (distanceTemp < s) {
+                    s = distanceTemp;
+                    pTemp = p;
+                }
+            }
+        }
+        return pTemp;
     }
 }
