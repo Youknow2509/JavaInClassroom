@@ -1,6 +1,8 @@
 package week4.paint.Paint;
 
-public class Point2D implements Shape {
+import java.io.Serializable;
+
+public class Point2D implements Shape, Serializable {
     private double x;
     private double y;
 

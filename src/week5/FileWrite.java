@@ -1,54 +1,47 @@
 package week5;
 
 import java.io.*;
-import java.nio.Buffer;
 
-public class FileReadWrite {
+public class FileWrite {
     
-    private static void ReadFile(String path) {
+    private static void WriteFile(String path) {
         File file = new File(path);
-        FileReader fr = null;
-        BufferedReader br = null;
-        String line = "";
-        double sum = 0;
+        FileWriter fr = null;
+        BufferedWriter br = null;
+        String data1 = "Hello!!";
+        String data2 = "How are you?";
         try {
-            fr = new FileReader(file);
-            br = new BufferedReader(fr);
-            while ((line = br.readLine()) != null) {
-                String [] ch = line.split(" ");
-                for (String string : ch) {
-                    try {
-                        sum += Double.parseDouble(string);
-                    } catch (NumberFormatException e) {
-                        System.out.println("Khong the chuyen doi " + string + " thanh so thuc");
-                    }
-                }
-            }
+            fr = new FileWriter(file);
+            br = new BufferedWriter(fr);
+
+            br.write(data1);
+            br.newLine();
+            br.write(data2);
+
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }
         finally {
-            if (br != null) {
-                try {
-                    br.close();
-                } catch (Exception e) {
-                    System.out.println("Khong the dong BufferedReader");
-                }
-            }
             if (fr != null) {
                 try {
                     fr.close();
                 } catch (Exception e) {
-                    System.out.println("Khong the dong FileReader");
+                    System.out.println("Khong the dong FileWriteer");
+                }
+            }
+            if (br != null) {
+                try {
+                    br.close();
+                } catch (Exception e) {
+                    System.out.println("Khong the dong BufferedWriteer");
                 }
             }
         }
-        System.out.println("Sum: " + sum);
     }
     public static void main(String[] args) {
-        String path = "/Users/v/code/java/projects/ExamClassRoom/src/week5/data.txt";
-        ReadFile(path);
+        String path = "/Users/v/code/java/projects/ExamClassRoom/src/week5/dataWrite.txt";
+        WriteFile(path);
     }
 }

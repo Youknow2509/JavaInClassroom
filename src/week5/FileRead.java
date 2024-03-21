@@ -1,9 +1,8 @@
 package week5;
 
 import java.io.*;
-import java.nio.Buffer;
 
-public class FileReadWrite {
+public class FileRead {
     
     private static void ReadFile(String path) {
         File file = new File(path);
@@ -48,7 +47,7 @@ public class FileReadWrite {
         System.out.println("Sum: " + sum);
     }
     public static void main(String[] args) {
-        String path = "/Users/v/code/java/projects/ExamClassRoom/src/week5/data.txt";
+        String path = "/Users/v/code/java/projects/ExamClassRoom/src/week5/dataRead.txt";
         ReadFile(path);
     }
 }
