@@ -26,7 +26,7 @@ public class Sum {
 		if (n == 1) {
 			return 1 + x;
 		}
-		long res = 1 + n*x;
+		long res = 1 + (long) n *x;
 		long temp = n;
 		
 		for (int i = 2; i <= n; i++) {

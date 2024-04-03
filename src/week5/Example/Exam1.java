@@ -25,10 +25,10 @@ public class Exam1 {
         System.out.println();
     }
     // Hàm main
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Variables
         List<Integer> list = randomize();
-        Scanner scanner = new Scanner(System.in);;
+        Scanner scanner = new Scanner(System.in);
         Integer input;
 
         //
@@ -45,6 +45,5 @@ public class Exam1 {
         } finally {
             scanner.close();
         }
-        return;
     }
 }

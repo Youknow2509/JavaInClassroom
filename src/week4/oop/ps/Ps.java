@@ -120,7 +120,7 @@ public class Ps {
         return count;
     }
     public int phannguyen(){
-        return (int)T/M;
+        return T /M;
     }
     public Ps phankhongnguyen(){
         Ps p = new Ps(T, M);

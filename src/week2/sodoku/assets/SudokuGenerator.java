@@ -105,9 +105,7 @@ public class SudokuGenerator extends check {
     public static int[][] coppyArr2d(int[][] arr) {
         int[][] temp = new int[size][size];
         for (int i = 0; i < size; i++) {
-            for (int j = 0; j < size ; j++) {
-                temp[i][j] = arr[i][j];
-            }
+            System.arraycopy(arr[i], 0, temp[i], 0, size);
         }
         return temp;
     }

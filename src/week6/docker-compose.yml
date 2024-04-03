@@ -1,0 +1,18 @@
+version: '3.8'
+services:
+  sqlserver:
+    image: mcr.microsoft.com/mssql/server:2019-latest
+    environment:
+      SA_PASSWORD: "P@ss12345"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1435:1433"
+
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      ADMINER_DESIGN: "pepa-linha"
+      ADMINER_DEFAULT_SERVER: sqlserver

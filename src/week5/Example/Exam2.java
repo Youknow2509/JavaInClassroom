@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class Exam2 {
 
     // Hàm main
-    public static void main(String args[]) {
+    public static void main(String[] args) {
         // Variables
         Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
@@ -28,6 +28,5 @@ public class Exam2 {
         } finally {
             scanner.close();
         }
-        return;
     }
 }

@@ -38,11 +38,8 @@ public class Sodoku extends SudokuGenerator {
 	}
 
 	private static boolean checkLocation(int[][] arr, int x, int y) {
-		if (x >= 0 && x <= 8 && y >= 0 && y <= 8 && arr[x][y] == 0) {
-			return true;
-		}
-		return false;
-	}
+        return x >= 0 && x <= 8 && y >= 0 && y <= 8 && arr[x][y] == 0;
+    }
 
 	private static void run() {
 			int otrong;
